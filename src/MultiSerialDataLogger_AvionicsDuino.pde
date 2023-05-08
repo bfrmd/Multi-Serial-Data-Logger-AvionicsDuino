@@ -80,7 +80,7 @@ float xcp = 360, ycp= 182, wcp = 60, hcp = 15; // cadre pour indiquer le nom du 
 
 boolean recording = false; // Flag qui indique si l'enregistrement est commencé ou non
 
-String chemin = "D:\\Dropbox\\LATTEPANDA\\DataLogging\\"; // Cette chaîne et les 2 suivantes sont utilisées pour la définition du chemin et des noms de fichiers pour les enregistrements
+String chemin = "D:\\Dropbox\\LATTEPANDA\\DataLogging\\"; // You can edit lines #83-84 to select the folder and the name of the file where data are to be recorded.
 String nomFile = "port_";
 String extension = ".txt";
 String horodatFile = "";
@@ -153,7 +153,7 @@ imageMode(CENTER);
 
 void draw() 
 {
-  numPortGps=0; //. If you don't need a GPS, you can uncomment this line and the next one.
+  numPortGps=0; // If you need to record a GPS, you can comment this line and the next one.
   timeSet = true;
   if(numPortGps > -1 && timeSet == false) // si un GPS/GNSS a été détecté mais que le fix n'est pas fait et donc l'heure n'est pas réglée
   {
@@ -322,7 +322,7 @@ void serialEvent(PortCom quelPort) // cette fonction est appellée à chaque foi
       {
        long now = System.currentTimeMillis();
        calendar.setTimeInMillis(now);
-       //output[numeroPort].print(formatter.format(calendar.getTime()) + ";"); //. If you don't need timestamping, you can comment this line
+       //output[numeroPort].print(formatter.format(calendar.getTime()) + ";"); //. If you need timestamping, you can uncomment this line
       } 
     }  
   }
